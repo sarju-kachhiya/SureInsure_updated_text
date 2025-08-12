@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Complete Insurance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* Hero Section Styling */
+        body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav1{
+  color: #004F4C;
+  font-weight: 600;
+  margin-left: 20px;
+}
+
+.nav1:hover {
+  color: #00a859;
+}
+
+.hero-section {
+  position: relative;
+  margin: 0 !important;
+  padding-top: 2rem;
+  background: url('assets/hero-bg1.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  
+
+  background: linear-gradient(to left,
+    rgba(0, 79, 76, 0.8) 0%,
+    rgba(0, 79, 76, 0.6) 30%,
+    rgba(0, 79, 76, 0.3) 60%,
+    rgba(0, 79, 76, 0) 100%
+  );
+}
+
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  margin-right: 180px !important;
+  margin-top: 10px !important;
+  margin-bottom: 30px !important;
+}
+
+/* Quote Button in Header */
+.custom-quote-btn {
+  background-color: #198754;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.3rem;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn{
+  padding: 0.8rem 1.3rem;
+}
+
+.custom-quote-btn:hover {
+  background-color: #157347;
+}
+
+.custom-quote-btn1{
+  color: #198754;
+  border: none;
+  font-size: larger;
+  font-weight: 500;
+  text-decoration: none;
+}
+  .custom-quote-btn2{
+    color: #004F4C;
+    font-weight: 800;
+    font-size: 28px;
+    text-decoration: none;
+}
+.navbar1{
+  padding: 5px 30px;
+}
+
+/* CTA Button */
+.custom-cta-btn {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0;
+}
+.hamburger-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* Cancel Icon ("×") */
+.cancel-icon {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+}
+
+.about-us-section {
+  font-family: 'Poppins', sans-serif;
+  margin: 30px 170px;
+}
+
+.badge-box {
+  max-width: 200px;
+  font-size: 0.85rem;
+}
+
+.stat-box {
+  min-width: 120px;
+}
+
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-attachment: scroll;
+  }
+}
+
+.highlight-box {
+  background-color: #eff2f3;
+  border-radius: 30px 30px 30px 0px;
+}
+hr {
+  margin: 1rem 0;
+  border-top: 1px solid #ccc;
+}
+ul li img {
+  filter: hue-rotate(120deg);
+}
+.btn-success {
+  background-color: #00a859;
+  border: none;
+}
+
+.services-section {
+      padding: 80px 0;
+      background: #f1f5f9;
+      text-align: center;
+      position: relative;
+    }
+    .service1{
+      margin: 30px 150px;
+    }
+
+
+    .service-card {
+  border: none;
+  border-radius: 20px;
+  padding: 30px 20px;
+  background: white;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #065f46; /* dark green */
+  z-index: 0;
+  transition: bottom 0.4s ease;
+  border-radius: 20px;
+}
+
+.service-card:hover::before {
+  bottom: 0;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Make content appear above animated bg */
+.service-card * {
+  position: relative;
+  z-index: 1;
+}
+
+.service-card .card-title,
+.service-card .card-text,
+.service-card .learn-more{
+    text-align: left;
+}
+
+/* Maintain text color transitions */
+.service-card:hover .card-title,
+.service-card:hover .card-text,
+.service-card:hover .learn-more {
+  color: white;
+}
+
+.why-choose-section1{
+  margin: 0px 150px;
+}
+
+
+
+    .icon-circle {
+      background-color: #059669;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .icon-circle i {
+      font-size: 26px;
+      color: white;
+    }
+
+    .learn-more {
+      color: #059669;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover .learn-more {
+      color: #d1fae5;
+    }
+    .col1{
+        color: #004F4C;
+    }
+    .col2{
+      color: #059669;
+    }
+    .choose-icon {
+  background-color: #059669;
+  color: white;
+  font-size: 20px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.image-stack-wrapper {
+  position: relative;
+  padding: 20px;
+  display: inline-block;
+}
+
+/* Green Background Accent */
+.bg-accent {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  width: 30%;
+  height: 105%;
+  background-color: #014737;
+  border-radius: 30px;
+  border-bottom-left-radius: 0px !important;
+  z-index: 0;
+}
+
+/* Main image styling */
+.main-image {
+  position: relative;
+  z-index: 2;
+  border: white 5px solid;
+  border-radius: 20px;
+  border-bottom-left-radius: 0px !important;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Bottom-left dotted shape */
+.dotted-shape {
+  position: absolute;
+  bottom: -60px;
+  left: -40px;
+  width: 190px;
+  height: 190px;
+  background-image: radial-gradient(#065f46 1.2px, transparent 1.2px);
+  background-size: 10px 10px;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.45;
+}
+.gap1{
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+
+.step-box {
+  width: 250px;
+  min-height: 230px;
+  position: relative;
+}
+
+.step-circle {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007452;
+  color: #fff;
+  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #F8F9FA;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 36px;
+  font-size: 14px;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.arrow-dotted {
+  width: 60px;
+  height: 1px;
+  border-top: 2px dotted #007452;
+  position: relative;
+  align-self: center;
+}
+
+.arrow-dotted::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -5px;
+  border-top: 6px solid transparent;
+  border-left: 8px solid #007452;
+  border-bottom: 6px solid transparent;
+}
+
+/* Mobile: stack layout */
+@media (max-width: 991.98px) {
+  .arrow-dotted {
+    transform: rotate(90deg);
+    margin: 30px 0;
+    width: 2px;
+    height: 40px;
+    border-top: none;
+    border-left: 2px dotted #007452;
+  }
+
+  .arrow-dotted::after {
+    top: auto;
+    left: -6px;
+    bottom: 0;
+    transform: rotate(-90deg);
+  }
+}
+/* .step-box {
+  width: 250px;
+  min-height: 230px;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+} */
+
+.step-box:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 116, 82, 0.2);
+}
+/* .icon-wrap img {
+  transition: transform 0.3s ease;
+} */
+
+.step-box:hover .icon-wrap img {
+  transform: scale(1.1);
+}
+
+.border-light-gray {
+  border-color: #dee2e6 !important;
+}
+
+.row > div:hover {
+  transform: translateY(-4px);
+  transition: 0.3s ease-in-out;
+}
+
+.row1 > div img {
+  background-color: #009A5E;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.contact-section input,
+.contact-section textarea,
+.contact-section .btn-success {
+  border-radius: 12px;
+  border-bottom-left-radius: 0; /* Remove bottom-left corner roundness */
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  border-color: #0c7a54;
+  box-shadow: none;
+}
+
+.contact-section .btn-success {
+  background-color: #0c7a54;
+  border: none;
+}
+
+.contact-section .btn-success:hover {
+  background-color: #095c3f;
+}
+.contact1{
+  margin: 0px 150px;
+}
+
+.footer-section {
+  background-color: #004F4C; /* Dark teal background */
+  color: #ffffff;
+}
+
+.footer-section .footer-brand {
+  font-size: 1.5rem;
+}
+
+.footer-section .footer-description {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  line-height: 1.6;
+  color: #d2d2d2;
+}
+
+.footer-section .footer-link {
+  display: block;
+  color: #e0e0e0;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.footer-section .footer-link:hover {
+  color: #009A5E;
+}
+@media (max-width: 1439px) {
+  .hero-section .container{
+    margin-left: 0 !important;
+  }
+  .about-us-section{
+    margin: 0 !important;
+  }
+  .service1{
+    margin: 0 !important;
+  }
+  .why-choose-section1{
+    margin: 0 !important;
+  }
+
+  .contact1 {
+    margin: 0 !important;
+  }
+}
+.link1{
+  text-decoration: none;
+  color: #04ba41;
+}
+.custom-rounded {
+    border-radius: 0.5rem; /* adjust for more or less roundness */
+    border-bottom-left-radius: 0;
+  }
+  :root{ --teal:#0f5b55; /* teal green like your design */ }
+    .bg-teal{ background-color:var(--teal) !important; }
+    .btn-cta{ background:#ffffff; color:var(--teal); font-weight:500; border:0; border-radius:.75rem; padding:.9rem 1.4rem; align-items: center; justify-items: center; justify-content: center; }
+    .btn-cta:hover{ background:#e6fffb; color:#083a36; }
+
+
+    </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <!-- Header -->
+<nav class="navbar navbar1 navbar-expand-lg bg-white shadow-sm ">
+  <!-- <div class="container"> -->
+    <a class="navbar-brand fw-bold fs-1 text-success" href="./"><span class="col1">Sure</span>Insure</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="hamburger-icon d-inline-block">
+    <div></div><div></div><div></div>
+  </span>
+  <span class="cancel-icon d-none">
+    &times;
+  </span>
+</button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+      <!-- <ul class="navbar-nav mb-2 mb-lg-0 me-5" >
+        <li class="nav-item" >
+          <a class="nav-link nav1" href="./">Home</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link nav1" href="#about">About Us</a>
+        </li>
+        <li class="nav-item"  >
+          <a class="nav-link nav1" href="#services">Services</a>
+        </li>
+      </ul> -->
+      
+          <p  class="mt-3 custom-quote-btn1 col1 " style="margin-left: 40px;"><span class="custom-quote-btn2">Quick Quote, <span class="col2">Big Savings!</span></span></p>
+          <button class="btn custom-quote-btn custom-rounded" style="margin-left: 30px;">Get A Free Quote</button>
+      
+    </div>
+  <!-- </div> -->
+</nav>
+
+
+
+
+  <!-- Hero Section -->
+  <section class="hero-section d-flex align-items-center">
+    <div class="overlay"></div>
+    <div class="container position-relative text-white">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+          <h2 class="display-5 ">Complete Insurance </h2>
+          <h2 class="display-5"><span class="fw-bold text-white-80">Coverage for Every Life</span> Stage</h2>
+          <p class="my-3">We provide a wide variety of customized insurance plans to suit your specific needs. Let us help you choose the right coverage so you can enjoy life with confidence and peace of mind.</p>
+          <a href="#" class="btn btn-success custom-quote-btn mb-4">Get Free Quote</a>
+
+          <div class="d-flex gap-4 mt-3 flex-wrap">
+            <div class="d-flex align-items-center">
+              <img src="https://img.icons8.com/ios-filled/50/ffffff/consultation.png" width="32" class="me-2 p-2 bg-success rounded-circle"/>
+              <div>
+                <small>Expert advice from</small><br/>
+                <strong>knowledgeable professionals</strong>
+              </div>
+            </div>
+            <div class="d-flex align-items-center">
+              <img src="https://img.icons8.com/ios-filled/50/ffffff/headset.png" width="32" class="me-2 p-2 bg-success rounded-circle"/>
+              <div>
+                <small>Quick and hassle-free claims</small><br/>
+                <strong>with 24/7 support</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+</div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<section class="about-right about-us-section py-5" id="about">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 position-relative text-center">
+        <img src="assets/about-img.jpg" alt="Group" class="img-fluid rounded shadow-sm " />
+        
+        <!-- Top Badge -->
+        <div class="badge-box bg-white shadow-sm position-absolute top-0 end-0 m-3 p-2 rounded">
+          <span class="d-block fw-bold text-success small">Fast Claims</span>
+          <span class="d-block fw-semibold text-dark small">Processing</span>
+        </div>
+
+        <!-- Bottom Badge -->
+        <div class="badge-box bg-white shadow-sm position-absolute bottom-0 start-0 m-3 p-2 rounded">
+          <i class="bi bi-chat-left-quote text-success me-1"></i>
+          <span class="small">Exceptional service and peace of mind. Highly recommend!</span>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-4">
+        <h2 class="fw-medium lh-base mb-3">
+          Reliable Insurance <strong class="text-success">Plans</strong> for<br>
+          All Your <strong class="text-success">Needs</strong>
+        </h2>
+        <p class="text-muted small mb-4">
+          We offer a diverse range of plans designed to match your unique requirements.
+          Our goal is to help you choose the right coverage so you can enjoy peace of mind
+          every day.
+        </p>
+
+        <div class="container my-5">
+  <div class="row align-items-start g-4 flex-wrap">
+    
+    
+    <!-- Left Column: Keypoints -->
+    <div class="col-md-6">
+      <ul class="list-unstyled mb-5">
+        <li class="d-flex align-items-center mb-4">
+          <img src="assets/design_elements/Component 11.png" alt="icon" width="20" class="me-3">
+          <strong class="text-dark">Customer-First Service</strong>
+        </li>
+        <li class="d-flex align-items-center mb-4">
+          <img src="assets/design_elements/Component 11.png" alt="icon" width="20" class="me-3">
+          <strong class="text-dark">Clear, Honest Communication</strong>
+        </li>
+        <li class="d-flex align-items-center mb-4">
+          <img src="assets/design_elements/Component 11.png" alt="icon" width="20" class="me-3">
+          <strong class="text-dark">24/7 Support, All Year Round</strong>
+        </li>
+        <li class="d-flex align-items-center mb-4">
+          <img src="assets/design_elements/Component 11.png" alt="icon" width="20" class="me-3">
+          <strong class="text-dark">Specialized Coverage</strong>
+        </li>
+      </ul>
+
+      <a href="#" class="btn btn-success custom-quote-btn mb-4">Get Free Quote</a>    
+    </div>
+
+    <!-- Right Column: Highlight Figures -->
+    <div class="col-md-6 d-flex justify-content-md-end">
+      <div class="highlight-box p-4 w-100" style="max-width: 320px;">
+        <div class="mb-4">
+          <h3 class="text-success fw-bold mb-1">100%</h3>
+          <p class="text-secondary mb-0">Success Rate</p>
+        </div>
+        <hr>
+        <div>
+          <h3 class="text-success fw-bold mb-1">2891+</h3>
+          <p class="text-secondary mb-0">Satisfied Clients</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+        <!-- <a href="#" class="btn btn-success btn-sm rounded-pill px-4 py-2">Get Free Quote</a> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section" id="services">
+  <h2 class="display-7 col1 mb-3">Complete <span style="font-weight: 900;">Insurance Coverage</span> Options</h2>
+  <p class="text-muted mb-5">We offer a full range of insurance services designed to deliver peace of mind, no matter your needs.</p>
+
+  <div class="container">
+    <div class="row service1 g-4">
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card service-card">
+          <div class="icon-circle mb-5">
+            <i class="bi bi-heart-pulse"></i>
+          </div>
+          <h5 class="card-title fw-semibold mb-3">Health Insurance</h5>
+          <p class="card-text">Covers your medical expenses with full protection for health.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card service-card">
+          <div class="icon-circle mb-5">
+            <i class="bi bi-person-bounding-box"></i>
+          </div>
+          <h5 class="card-title fw-semibold mb-3">Life Insurance</h5>
+          <p class="card-text">Ensures financial security for your loved ones through tailored life coverage.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card service-card">
+          <div class="icon-circle mb-5">
+            <i class="bi bi-briefcase"></i>
+          </div>
+          <h5 class="card-title fw-semibold mb-3">Business Insurance</h5>
+          <p class="card-text">Safeguards your business with reliable insurance solutions.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card service-card">
+          <div class="icon-circle mb-5">
+            <i class="bi bi-car-front-fill"></i>
+          </div>
+          <h5 class="card-title fw-semibold mb-3">Car Insurance</h5>
+          <p class="card-text">Protects your vehicle and covers accident or damage-related costs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="why-choose-section py-5 ">
+  <div class="container">
+    <div class="row why-choose-section1 align-items-center">
+      
+      <!-- LEFT CONTENT -->
+      <div class="col-lg-6 mb-5 mb-lg-0 pt-lg-5">
+          <h2 class="display-7 col1 mb-3">Why You <span style="font-weight: 900;">Should Choose</span> Our Insurance Coverage Options</h2>
+        <!-- <h2 class="fw-semibold mb-3 col1"> 
+          Why You <span style="font-weight: 700;">Should Choose</span> Our Insurance Policies
+        </h2> -->
+        <p class="text-muted mb-5">
+          Select from our insurance plans designed for comprehensive coverage, personalized support, and competitive pricing. 
+          We ensure a seamless experience with fast claims processing and expert guidance—giving you peace of mind and 
+          protection for your future.
+        </p>
+
+        <div class="row gy-4">
+          <div class="col-6 d-flex align-items-start">
+            <div class="choose-icon me-3">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <div>
+              <h6 class="fw-semibold mb-1">Full Control of Your Policy</h6>
+            </div>
+          </div>
+
+          <div class="col-6 d-flex align-items-start">
+            <div class="choose-icon me-3">
+              <i class="bi bi-currency-dollar"></i>
+            </div>
+            <div>
+              <h6 class="fw-semibold mb-1">Affordable Premium Options</h6>
+            </div>
+          </div>
+
+          <div class="col-6 d-flex align-items-start">
+            <div class="choose-icon me-3">
+              <i class="bi bi-lightning-charge"></i>
+            </div>
+            <div>
+              <h6 class="fw-semibold mb-1">Quick & Simple Process</h6>
+            </div>
+          </div>
+
+          <div class="col-6 d-flex align-items-start">
+            <div class="choose-icon me-3">
+              <i class="bi bi-headset"></i>
+            </div>
+            <div>
+              <h6 class="fw-semibold mb-1">24/7 Customer Support</h6>
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="btn btn-success custom-quote-btn px-4 mt-5">Get Free Quote</a>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-lg-6 position-relative text-center">
+        <div class="image-stack-wrapper position-relative d-inline-block">
+      
+      <!-- Background Shape -->
+      <div class="bg-accent"></div>
+
+      <!-- Dotted Circle Design -->
+      <div class="dotted-shape"></div>
+
+      <!-- Image -->
+      <img src="assets/why-choose-us.jpg" alt="Team discussing insurance" class="main-image rounded-4 position-relative" />
+      
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works py-5 bg-light ">
+  <div class="container text-center how-it-works1 mt-5">
+      <h2 class="display-7 col1 mb-3">A Simple Process to <span style="font-weight: 900;">Get Covered</span> with Ease.</h2>
+    <p class="text-muted mb-5">
+      Our insurance services are designed to give you peace of mind—tailored to your needs and delivered in just a few easy steps.
+    </p>
+
+    <div class="d-flex flex-wrap how-it-works1 flex-lg-nowrap justify-content-center align-items-start  position-relative">
+      
+      <!-- Step 1 -->
+      <div class="step-box position-relative text-start bg-white p-4 shadow-sm rounded-4">
+        <img src="assets/design_elements/how-it-work-1.png" width="40" class="icon-wrap mb-3" alt="Tailored Solutions" />
+        <h6 class="fw-bold">Tailored Solutions</h6>
+        <p class="small text-muted">Our specialists design a custom insurance plan that fits your lifestyle and goals.</p>
+        <div class="step-circle">1</div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="arrow-dotted"></div>
+
+      <!-- Step 2 -->
+      <div class="step-box position-relative text-start bg-white p-4 shadow-sm rounded-4">
+        <img src="assets/design_elements/how-it-work-2.png" width="40" class="icon-wrap mb-3" alt="Seamless Enrollment" />
+        <h6 class="fw-bold">Seamless Enrollment</h6>
+        <p class="small text-muted">We walk you through a quick, stress-free process to get your coverage set up.</p>
+        <div class="step-circle">2</div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="arrow-dotted"></div>
+
+      <!-- Step 3 -->
+      <div class="step-box position-relative text-start bg-white p-4 shadow-sm rounded-4">
+        <img src="assets/design_elements/how-it-work-3.png" width="40" class="icon-wrap mb-3" alt="Continuous Support" />
+        <h6 class="fw-bold">Continuous Support</h6>
+        <p class="small text-muted">Get 24/7 expert assistance and ongoing help whenever you need it.</p>
+        <div class="step-circle">3</div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="arrow-dotted"></div>
+
+      <!-- Step 4 -->
+      <div class="step-box position-relative text-start bg-white p-4 shadow-sm rounded-4">
+        <img src="assets/design_elements/how-it-work-4.png" width="40" class="icon-wrap mb-3" alt="Claims & Adjustments" />
+        <h6 class="fw-bold">Hassle-Free Claims & Adjustments</h6>
+        <p class="small text-muted">Enjoy fast claim processing and flexible policy updates with ease.</p>
+        <div class="step-circle">4</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-white">
+  <div class="container text-center mt-5">
+      <h2 class="display-7 col1 mb-3">Discover the standout <span style="font-weight: 900;">Insurance benefits</span> we offer</h2>
+    <p class="text-muted mb-5">
+      Uncover the essential highlights of our insurance plans – built for extensive protection,
+      customizable options, and top-tier service.
+    </p>
+
+    <div class="row row1 text-center gx-0">
+      <!-- Feature 1 -->
+      <div class="col-md-3 px-3 border-end border-light-gray">
+        <div class="mb-3">
+          <img src="assets/design_elements/features-1.png" alt="Customizable Plans" width="60">
+        </div>
+        <h6 class="fw-bold">Customizable Plans</h6>
+        <p class="text-muted small">
+          Get coverage tailored to your unique needs and budget for the ideal protection.
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="col-md-3 px-3 border-end border-light-gray">
+        <div class="mb-3">
+          <img src="assets/design_elements/features-2.png" alt="Multiple Policy Savings" width="60">
+        </div>
+        <h6 class="fw-bold">Multiple Policy Savings</h6>
+        <p class="text-muted small">
+          Bundle and save! Combine policies for cost-effective and comprehensive coverage.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="col-md-3 px-3 border-end border-light-gray">
+        <div class="mb-3">
+          <img src="assets/design_elements/features-3.png" alt="Accident Forgiveness" width="60">
+        </div>
+        <h6 class="fw-bold">Accident Forgiveness</h6>
+        <p class="text-muted small">
+          Stay protected even when the unexpected happens – your rates won’t increase after your first accident.
+        </p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="col-md-3 px-3">
+        <div class="mb-3">
+          <img src="assets/design_elements/features-4.png" alt="Home Replacement Cost" width="60">
+        </div>
+        <h6 class="fw-bold">Home Replacement Cost</h6>
+        <p class="text-muted small">
+          Ensure your home is fully covered – with replacement cost coverage that adjusts to your needs.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-5 mb-5" role="region" aria-labelledby="ctaTitle">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div class="card bg-teal text-white border-0 rounded-4 shadow-lg p-4 p-lg-5">
+            <div class="card-body p-0">
+              <h1 id="ctaTitle" class="display-6 fw-bold mb-3">What matters most—get your free insurance quote today!</h1>
+              <p class="fs-5 opacity-75 mb-4">Whether it’s your home, health, car, or business, we’ve got you covered. Discover peace of mind with reliable, comprehensive protection tailored to your needs.</p>
+              <div class="text-center">
+                <a href="#" class="btn btn-cta btn-lg">Contact Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<footer class="footer-section text-white py-5">
+  <div class="container">
+    <div class="row gy-5">
+      
+      <!-- Company Info -->
+      <div class="col-lg-12  text-left">
+        <h2 class="footer-brand fs-1"><span class="fw-bold">Sure</span><span class="text-success fw-bold">Insure</span></h2>
+        <p class="footer-description">
+SureInsure is committed to providing reliable and affordable insurance solutions for individuals, families, and businesses.  
+Our mission is to protect what matters most by offering comprehensive coverage options, personalized service, and transparent advice tailored to your needs.  
+<br><span class="mt-3" style="margin-top: 20px;">
+All insurance policies are subject to underwriting approval, terms, conditions, limitations, and exclusions as outlined in the official policy documents.  
+The information provided on this website is for general informational purposes only and should not be considered legal, financial, or insurance advice.</span>
+<br><span class="mt-3" style="margin-top: 20px;">
+Coverage availability and premiums may vary by state, region, or product type.  
+
+SureInsure partners with leading, licensed carriers to ensure competitive rates and dependable claims support.  
+We are dedicated to maintaining the highest standards of ethics, confidentiality, and customer care.  </span>
+<br><span class="mt-3" style="margin-top: 20px;">
+Your privacy is important to us — we follow strict data protection policies to safeguard your personal information. </span> 
+        </p>
+      </div>
+
+      
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom mt-4 pt-4 border-top border-light-subtle text-center">
+      <div class="row align-items-center fs-6">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+<small>Copyright © 2025 <a style="text-decoration: none; color: #00a859;" href="./">SureInsure</a>. All Rights Reserved.</small>        </div>
+        <div class="col-md-6">
+          <div class="d-flex justify-content-center justify-content-md-end gap-4">
+            <a href="privacy.html" class="footer-link fs-6">Privacy Policy</a>
+            <a href="terms.html" class="footer-link fs-6">Terms of Service</a>
+            <a href="unsubscribe.html" class="footer-link fs-6">Unsubscribe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+  <script>
+  const toggler = document.querySelector('.navbar-toggler');
+  const collapseEl = document.getElementById('mainNavbar');
+  const hamburgerIcon = toggler.querySelector('.hamburger-icon');
+  const cancelIcon = toggler.querySelector('.cancel-icon');
+
+  collapseEl.addEventListener('show.bs.collapse', () => {
+    hamburgerIcon.classList.add('d-none');
+    cancelIcon.classList.remove('d-none');
+  });
+
+  collapseEl.addEventListener('hide.bs.collapse', () => {
+    hamburgerIcon.classList.remove('d-none');
+    cancelIcon.classList.add('d-none');
+  });
+</script>
+</body>
+</html>
